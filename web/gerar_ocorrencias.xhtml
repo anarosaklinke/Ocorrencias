@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>Menu</title>
+
+        <style>
+            .border {
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                margin: 6px;
+            }
+
+            body { padding-top: 60px; }
+        </style>
+
+
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Optional Bootstrap Theme -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    </h:head>
+
+    <h:body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">Gerar Ocorrências</a>
+
+            <ul class="navbar-nav">
+                <div class="btn-group">
+                    <button type="return" class="btn btn-dark" onclick="history.go(-1)">Voltar</button>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="container text-center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="http://naturalemporium.com.br/wp-content/uploads/2018/10/avatar-369-456321.png" alt="Card image"
+                     style="width:100%"/>
+                <div class="card-body">
+                    <h:form>
+                        <h:commandButton styleClass="btn btn-dark text-white" action="#{GerarOcorrencias.Gerar()}" value="Gerar Ocorrências"/>
+                        <h:messages id="confirm_message" />
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:body>
+
+</html>

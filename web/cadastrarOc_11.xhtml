@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>CadastrarOcorrencia</title>
+
+        <style>
+            .border {
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                margin: 6px;
+            }
+
+            body {
+                padding-top: 40px;
+            }
+        </style>
+
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Optional Bootstrap Theme -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css" rel="stylesheet" />
+    </h:head>
+
+    <h:body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">Cadastrar Ocorrência</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="return" class="btn btn-dark" onclick="history.go(-1)">Voltar</button>
+                </li>
+            </ul>
+        </nav>
+
+        <h:form id="cadform">
+
+            <div class="container-fluid text-center">
+                <div class="jumbotron bg-dark">
+
+                    <h1 class="text-white">Tipo</h1>
+                    <div class="container">
+                        <h:inputText id="txttipo" size="10" maxlength="30" value="#{cadastrarOcorrencia.tipo}"
+                                     required="true" requiredMessage="O tipo não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!" title="tipo">
+                            <f:validateLength maximum="30" />
+                        </h:inputText>
+
+                        <h1 class="text-white">Altura Mínima</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtaltMin" size="10" maxlength="30" value="#{cadastrarOcorrencia.altMin}"
+                                         required="true" requiredMessage="altura minima não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="altMin">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Altura Máxima</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtaltMax" size="10" maxlength="30" value="#{cadastrarOcorrencia.altMax}"
+                                         required="true" requiredMessage="altura maxima não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="altMax">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Tom de Pele</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtpele" size="10" maxlength="30" value="#{cadastrarOcorrencia.pele}"
+                                         required="true" requiredMessage="Cor da pele não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="pele">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Cor do Cabelo</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtcabelo" size="10" maxlength="30" value="#{cadastrarOcorrencia.cabelo}"
+                                         required="true" requiredMessage="Cor do cabelo não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="cabelo">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Cor do Olho</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtolho" size="10" maxlength="30" value="#{cadastrarOcorrencia.olho}"
+                                         required="true" requiredMessage="Cor do olho não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="olho">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Características Corporais</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtcaracteristica" size="10" maxlength="30"
+                                         value="#{cadastrarOcorrencia.caracteristica}" required="true"
+                                         requiredMessage="Cor do olho não foi informado!" validatorMessage="Tamanho máximo excedido!"
+                                         title="caracteristica">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Informe as caracteristicas marcantes</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtcaractecMarcante" size="10" maxlength="30"
+                                         value="#{cadastrarOcorrencia.caractecMarcante}" required="true"
+                                         requiredMessage="Cor do olho não foi informado!" validatorMessage="Tamanho máximo excedido!"
+                                         title="caractecMarcante">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Informe a Idade Mínima</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtidadeMin" size="10" maxlength="30" value="#{cadastrarOcorrencia.idadeMin}"
+                                         required="true" requiredMessage="Cor do olho não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="idadeMin">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Informe a Idade Máxima</h1>
+                        <div class="container">
+
+                            <h:inputText id="txtidadeMax" size="10" maxlength="30" value="#{cadastrarOcorrencia.idadeMax}"
+                                         required="true" requiredMessage="Cor do olho não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="idadeMax">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                        <h1 class="text-white">Informe o que essa pessoa fez</h1>
+                        <div class="container">
+
+                            <h:inputTextarea id="txtocorrido" value="#{cadastrarOcorrencia.ocorrido}" required="true"
+                                             requiredMessage="descricao não foi informado!" title="ocorrido">
+                                <f:validateLength maximum="30" />
+                            </h:inputTextarea>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                <h:commandButton id="btnEnviar" value="cadastrar" action="#{cadastrarOcorrencia.cadastro_11}" />
+        </div>
+        </h:form>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:body>
+</html>

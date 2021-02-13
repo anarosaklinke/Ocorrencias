@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Cadastrar Ocorrência</title>
+   
+    </h:head>
+    <h:body>
+        <h1>Cadastrar Ocorrência</h1>
+        <h:form id="cadformRua">
+            <h:messages />
+            
+            <table>    
+    <c:forEach var="ruaView" items="#{cadastrarOcorrencia.ruaView}">
+            <tr>
+                <td>                    
+                   <h:outputText value="#{ruaView}"/>
+                </td>
+            </tr>
+    </c:forEach> 
+</table>
+            
+            <table>
+                <tr>
+                    <th>Digite uma Rua</th>
+                    <td>
+                        <h:inputText id="txtRua" size="10" maxlength="30"
+                                     value="#{cadastrarOcorrencia.rua}"
+                                     required="true" requiredMessage="rua não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!"
+                                     title="rua">
+                            <f:validateLength maximum="30"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                                       
+                <tr>
+                    <td colspan="2">
+                        <h:commandButton id="btnEnviar" value="enviar"
+                                         action="#{cadastrarOcorrencia.cadastro_3}" 
+                                        
+                                         />                      
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </h:form>
+        <h:form>
+        <input type='button' value='Voltar' onclick='history.go(-1)' />
+        </h:form>
+
+    </h:body>
+</html>
+

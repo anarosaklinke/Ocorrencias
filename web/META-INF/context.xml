@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" antiResourceLocking="true" path="/Ocorrencias">
+  <Resource auth="Container" description="Ocorrencias" driverClassName="com.mysql.jdbc.Driver" name="com.mysql.cj.jdbc.Driver" password="1234" url="jdbc:mysql://localhost:3306/sistemacadastrarocorrencia?" username="root" validationQuery="SELECT 1;"/>
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="ocorrencias" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/ocorrencias?useTimezone=true&amp;serverTimezone=UTC" username="root"/>
+</Context>

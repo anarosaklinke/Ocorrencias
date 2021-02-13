@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Cadastrar Ocorrência</title>
+        
+                <script type="text/javascript">
+   
+//<![CDATA[
+
+function validadata(){
+   var   d = document.getElementById("cadform:txtData").value;
+        
+   var data = d; // pega o valor do input
+   data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+   var data_array = data.split("-"); // quebra a data em array
+   var dia = data_array[2];
+   var mes = data_array[1];
+   var ano = data_array[0];
+
+   // para o IE onde será inserido no formato dd/MM/yyyy
+   if(data_array[0].length !== 4){
+      dia = data_array[0];
+      mes = data_array[1];
+      ano = data_array[2];
+   }
+
+   var hoje = new Date();
+   var d1 = hoje.getDate();
+   var m1 = hoje.getMonth()+1;
+   var a1 = hoje.getFullYear();
+
+   var d1 = new Date(a1, m1, d1);
+   var d2 = new Date(ano, mes, dia);
+
+   var diff = d2.getTime() - d1.getTime();
+   diff = diff / (1000 * 60 * 60 * 24);
+   
+   if(diff < 0){
+      return true;
+   }else if(diff > 0){
+       window.alert("DATA invalida");
+      return false;
+   }else{
+       window.alert("DATA invalida");
+      return false;
+   }
+   
+}
+
+function validaMenu() {
+        if (validadata() === true){
+            return true;
+        }else {
+            return false;
+        }
+   
+}
+
+    //]]>
+ </script>    
+        
+    </h:head>
+    <h:body>
+        <h1>Cadastrar Ocorrência</h1>
+        <h:form id="cadform">
+            <h:messages />
+            <table>
+                <tr>
+                    <th>Data da Ocorrencia</th>
+                    <td>
+                        <h:inputText id="txtData" size="10" maxlength="30"
+                                     value="#{cadastrarOcorrencia.data}"
+                                     required="true" requiredMessage="Data não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!"
+                                     title="data">
+                            <f:validateLength maximum="30"/>
+                        </h:inputText>
+                        dd/mm/aaaa
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>Digite a descrição da Ocorrencia</th>
+                    <td>
+                        <h:inputTextarea  id="txtDescricao" 
+                                     value="#{cadastrarOcorrencia.descricao}"
+                                     required="true" requiredMessage="descricao não foi informado!"
+                                     title="descricao">
+                            <f:validateLength maximum="30"/>
+                        </h:inputTextarea>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>Digite a Hora da Ocorrencia</th>
+                    <td>
+                        <h:inputText id="txtHora" size="10" maxlength="30"
+                                     value="#{cadastrarOcorrencia.hora}"
+                                     required="true" requiredMessage="hora não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!"
+                                     title="hora">
+                            <f:validateLength maximum="30"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>Digite um Ponto de Referencia</th>
+                    <td>
+                        <h:inputText id="txtPontoref" size="10" maxlength="30"
+                                     value="#{cadastrarOcorrencia.pontoref}"
+                                     required="true" requiredMessage="Ponto de Referencia não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!"
+                                     title="pontoref">
+                            <f:validateLength maximum="30"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                
+    
+                                           
+             
+                
+                <tr>
+                    <td colspan="2">
+                        <h:commandButton id="btnEnviar" value="enviar"
+                                         action="#{cadastrarOcorrencia.cadastro_1}" 
+                                         onclick="return validaMenu();" 
+                                         />                      
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </h:form>
+        <h:form>
+        <input type='button' value='Voltar' onclick='history.go(-1)' />
+        </h:form>
+
+    </h:body>
+</html>
+

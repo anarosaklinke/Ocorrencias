@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>Cadastrar ADM</title>
+
+        <style>
+            .border {
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                margin: 6px;
+            }
+
+            body {
+                padding-top: 40px;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            //<![CDATA[
+
+            function validadata() {
+                var d = document.getElementById("cadform:txtDataNascimento").value;
+
+                var data = d; // pega o valor do input
+                data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+                var data_array = data.split("-"); // quebra a data em array
+                var dia = data_array[2];
+                var mes = data_array[1];
+                var ano = data_array[0];
+
+                // para o IE onde será inserido no formato dd/MM/yyyy
+                if (data_array[0].length !== 4) {
+                    dia = data_array[0];
+                    mes = data_array[1];
+                    ano = data_array[2];
+                }
+
+                var hoje = new Date();
+                var d1 = hoje.getDate();
+                var m1 = hoje.getMonth() + 1;
+                var a1 = hoje.getFullYear();
+
+                var d1 = new Date(a1, m1, d1);
+                var d2 = new Date(ano, mes, dia);
+
+                var diff = d2.getTime() - d1.getTime();
+                diff = diff / (1000 * 60 * 60 * 24);
+
+                if (diff < 0) {
+                    return true;
+                } else if (diff > 0) {
+                    window.alert("DATA invalida");
+                    return false;
+                } else {
+                    window.alert("DATA invalida");
+                    return false;
+                }
+
+            }
+
+
+            function isValidCPF() {
+                // https://www.geradorcpf.com/javascript-validar-cpf.htm
+                // https://www.geradorcpf.com/mascara-cpf-com-jquery.htm
+                //event.stopPropagation();    
+                //var cpf = document.getElementById("txtCpf").value;
+                //event.stopPropagation();
+
+                var cpf = document.getElementById("cadform:txtCpf").value;
+
+                cpf = cpf.replace(/[^\d]+/g, "");
+
+                if (cpf === "") {
+                    window.alert("CPF invalido");
+                    return false;
+                }
+                // Elimina CPFs invalidos conhecidos	
+                if (cpf.length !== 11 ||
+                        cpf === "00000000000" ||
+                        cpf === "11111111111" ||
+                        cpf === "22222222222" ||
+                        cpf === "33333333333" ||
+                        cpf === "44444444444" ||
+                        cpf === "55555555555" ||
+                        cpf === "66666666666" ||
+                        cpf === "77777777777" ||
+                        cpf === "88888888888" ||
+                        cpf === "99999999999") {
+                    window.alert("CPF invalido");
+                    return false;
+                }
+                var i = 0;
+
+                var soma = 0;
+
+                for (i = 1; i <= 9; i = i + 1) {
+                    soma = soma + parseInt(cpf.substring(i - 1, i), 10) * (11 - i);
+                }
+
+                var resto = soma % 11;
+
+                if (resto === 10 || resto === 11 || resto < 2) {
+                    resto = 0;
+                } else {
+                    resto = 11 - resto;
+                }
+
+                if (resto !== parseInt(cpf.substring(9, 10))) {
+                    window.alert("CPF invalido");
+                    return false;
+                }
+
+                soma = 0;
+
+                for (i = 1; i <= 10; i++) {
+                    soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+                }
+                resto = soma % 11;
+
+                if (resto === 10 || resto === 11 || resto < 2) {
+                    resto = 0;
+                } else {
+                    resto = 11 - resto;
+                }
+
+                if (resto !== parseInt(cpf.substring(10, 11))) {
+                    window.alert("CPF invalido");
+                    return false;
+                }
+
+                return true;
+
+            }
+            function validaMenu() {
+                if (isValidCPF() === true) {
+                    if (validadata() === true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            //]]>
+        </script>
+
+
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Optional Bootstrap Theme -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css" rel="stylesheet" />
+    </h:head>
+
+    <h:body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">Cadastrar Admin</a>
+            <ul class="navbar-nav">
+                <div class="btn-group">
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+                            Cadastro
+                        </button>
+                        <h:form styleClass="dropdown-menu">
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.CadastrarAdm()}"
+                                           value="Cadastrar Adm" />
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.CadastrarUsuario()}"
+                                           value="Cadastrar Usuario" />
+                        </h:form>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+                            Funções
+                        </button>
+                        <h:form styleClass="dropdown-menu">
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.CadastrarOcorrencia()}"
+                                           value="Cadastrar Ocorrencia" />
+                            <h:commandLink styleClass="dropdown-item"
+                                           action="#{LogarSistema.ConsultarCategoriasMaisCadastradas()}"
+                                           value="Consultar Categorias Mais Incidentes" />
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.ConsultaZonaDeRisco()}"
+                                           value="Consultar Zona de Risco" />
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.ConsultaBairro()}"
+                                           value="Consultar Bairro" />
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.gerar_ocorrencias()}"
+                                           value="Gerar Ocorrências" />
+                            <h:commandLink styleClass="dropdown-item" action="#{LogarSistema.atualizar_Classificacao()}"
+                                           value="Atualizar Classificacao" />
+                        </h:form>
+                    </div>
+
+                    <h:form>
+                        <h:commandButton id="btnVoltar" value="Voltar" styleClass="btn btn-dark text-white"
+                                         action="#{cadastrarAdm.voltar}" />
+                        <h:commandButton id="btnSair" value="Sair" styleClass="btn btn-dark text-white"
+                                         action="#{LogarSistema.logout_action()}" />
+                    </h:form>
+                </div>
+            </ul>
+        </nav>
+
+
+        <div class="container text-center">
+
+            <h:form>
+                <div class="row">
+                    <div class="col">
+                        <div class="container-fluid p-3 my-3 bg-dark text-white text-center">
+                            <h1>Dados Pessoais</h1>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtNome">Nome</label><br />
+                            <h:inputText id="txtNome" size="30" maxlength="30" value="#{cadastrarAdm.nome}"
+                                         required="true" requiredMessage="O Nome não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="nome">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>CPF</label><br />
+                            <h:inputText id="txtCpf" size="30" maxlength="30" value="#{cadastrarAdm.cpf}"
+                                         required="true" requiredMessage="O CPF não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="cpf">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Sexo</label><br />
+                            <h:inputText id="txtSexo" size="30" maxlength="30" value="#{cadastrarAdm.sexo}"
+                                         required="true" requiredMessage="O Sexo não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="sexo">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Data de Nascimento (dd/mm/yyyy)</label><br />
+                            <h:inputText id="txtDataNascimento" size="30" maxlength="30"
+                                         value="#{cadastrarAdm.dataNascimento}" required="true"
+                                         requiredMessage="A data de nascimento não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="dataNascimento">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Usuário</label><br />
+                            <h:inputText id="txtUsuario" size="30" maxlength="15" value="#{cadastrarAdm.usuario}"
+                                         required="true" requiredMessage="O usuario não foi informado!"
+                                         validatorMessage="Tamanho máximo excedido!" title="usuario">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label><br />
+                            <h:inputSecret id="txtSenha" size="30" maxlength="15" value="#{cadastrarAdm.senha}"
+                                           required="true" requiredMessage="A senha não foi informado!"
+                                           validatorMessage="Tamanho máximo excedido!" title="senha">
+                                <f:validateLength maximum="30" />
+                            </h:inputSecret>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="container-fluid p-3 my-3 bg-dark text-white text-center">
+                            <h1>Endereço</h1>
+                        </div>
+
+                        <div class="form-group">
+                            <label>País</label><br />
+                            <h:inputText id="txtPais" size="30" maxlength="30" value="#{cadastrarAdm.pais}"
+                                         validatorMessage="Tamanho máximo excedido!" title="pais">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Estado</label><br />
+                            <h:inputText id="txtEstado" size="30" maxlength="30" value="#{cadastrarAdm.estado}"
+                                         validatorMessage="Tamanho máximo excedido!" title="estado">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Cidade</label><br />
+                            <h:inputText id="txtCidade" size="30" maxlength="30" value="#{cadastrarAdm.cidade}"
+                                         validatorMessage="Tamanho máximo excedido!" title="cidade">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Bairro</label><br />
+                            <h:inputText id="txtBairro" size="30" maxlength="30" value="#{cadastrarAdm.bairro}"
+                                         validatorMessage="Tamanho máximo excedido!" title="bairro">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Rua</label><br />
+                            <h:inputText id="txtRua" size="30" maxlength="30" value="#{cadastrarAdm.rua}"
+                                         validatorMessage="Tamanho máximo excedido!" title="rua">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Número</label><br />
+                            <h:inputText id="txtNumero" size="30" maxlength="30" value="#{cadastrarAdm.numero}"
+                                         validatorMessage="Tamanho máximo excedido!" title="numero">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>CEP</label><br />
+                            <h:inputText id="txtcep" size="30" maxlength="30" value="#{cadastrarAdm.cep}"
+                                         validatorMessage="Tamanho máximo excedido!" title="numero">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="container-fluid p-3 my-3 bg-dark text-white text-center">
+                            <h1>Contato</h1>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Telefone Residencial</label><br />
+                            <h:inputText id="txttelRes" size="30" maxlength="30" value="#{cadastrarAdm.telRes}"
+                                         validatorMessage="Tamanho máximo excedido!" title="telRes">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone Comercial</label><br />
+                            <h:inputText id="txttelCom" size="30" maxlength="30" value="#{cadastrarAdm.telCom}"
+                                         validatorMessage="Tamanho máximo excedido!" title="telCom">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>Celular</label><br />
+                            <h:inputText id="txttelCel" size="30" maxlength="30" value="#{cadastrarAdm.telCel}"
+                                         validatorMessage="Tamanho máximo excedido!" title="telCel">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label><br />
+                            <h:inputText id="txtemail" size="30" maxlength="30" value="#{cadastrarAdm.email}"
+                                         validatorMessage="Tamanho máximo excedido!" title="email">
+                                <f:validateLength maximum="30" />
+                            </h:inputText>
+                        </div>
+
+                    </div>
+                </div>
+                <h:commandButton id="btnEnviar" styleClass="btn bg-dark text-white" value="cadastrar"
+                                 action="#{cadastrarAdm.cadastrarAdm()}" onclick="return validaMenu();"/>
+                <h:commandButton id="btnLimpar" styleClass="btn bg-dark text-white" value="Limpar" immediate="true"
+                                 action="#{cadastrarAdm.limpaTela_action}"/>
+            </h:form>
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:body>
+
+</html>

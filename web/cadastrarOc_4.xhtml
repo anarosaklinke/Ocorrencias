@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Cadastrar Ocorrência</title>
+   
+    </h:head>
+    <h:body>
+        <h1>Cadastrar Ocorrência</h1>
+        <h:form id="cadformTipo">
+            <h:messages />
+            
+            <table>    
+    <c:forEach var="tipoView" items="#{cadastrarOcorrencia.tipoView}">
+            <tr>
+                <td>                    
+                   <h:outputText value="#{tipoView}"/>
+                </td>
+            </tr>
+    </c:forEach> 
+</table>
+            
+            <table>
+                <tr>
+                    <th>Digite o Tipo</th>
+                    <td>
+                        <h:inputText id="txtRua" size="10" maxlength="30"
+                                     value="#{cadastrarOcorrencia.tipo}"
+                                     required="true" requiredMessage="tipo não foi informado!"
+                                     validatorMessage="Tamanho máximo excedido!"
+                                     title="tipo">
+                            <f:validateLength maximum="30"/>
+                        </h:inputText>
+                    </td>
+                </tr>
+                                       
+                <tr>
+                    <td colspan="2">
+                        <h:commandButton id="btnEnviar" value="enviar"
+                                         action="#{cadastrarOcorrencia.cadastro_4}" 
+                                        
+                                         />                      
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </h:form>
+        <h:form>
+        <input type='button' value='Voltar' onclick='history.go(-1)' />
+        </h:form>
+
+    </h:body>
+</html>
+

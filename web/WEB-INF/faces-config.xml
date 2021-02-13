@@ -1,0 +1,1069 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <application>
+        <locale-config>
+            <default-locale>pt_BR</default-locale>
+        </locale-config>
+    </application>
+
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+               
+        <navigation-case>
+            <from-outcome>PRINCIPAL</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>CADASTRAR_USUARIO</from-outcome>
+            <to-view-id>/cadastrarUsuario.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>LIMPA</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>LOGOUT</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CONSULTA_BAIRRO</from-outcome>
+            <to-view-id>/consulta_bairro.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRAR_ADM</from-outcome>
+            <to-view-id>/cadastrarAdm.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRAR_USUARIO</from-outcome>
+            <to-view-id>/cadastrarUsuario.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CONSULTA_ZONA_RISCO</from-outcome>
+            <to-view-id>/ConsultarZonaDeRisco.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>ATUALIZAR_CLASSIFICACAO</from-outcome>
+            <to-view-id>/atualizar_classificacao.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>GERAR_OCORRENCIAS</from-outcome>
+            <to-view-id>/gerar_ocorrencias.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>/atualizar_classificacao.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>PRINCIPAL</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+    
+    
+    <from-view-id>/principal.xhtml</from-view-id>
+    
+    
+    <navigation-rule>
+    <from-view-id>/gerar_ocorrencias.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>PRINCIPAL</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>/consulta_bairro.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CONSULTA_BAIRRO</from-outcome>
+            <to-view-id>/consulta_bairro.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+            <from-outcome>LIMPA_BAIRRO</from-outcome>
+            <to-view-id>/consulta_bairro.xhtml</to-view-id>
+    </navigation-case>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+
+       <navigation-rule>
+    <from-view-id>/ConsultarZonaDeRisco.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CONSULTA_ZONA_RISCO</from-outcome>
+            <to-view-id>/ConsultarZonaDeRisco.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+            <from-outcome>LIMPA_ZonaRisco</from-outcome>
+            <to-view-id>/ConsultarZonaDeRisco.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+    <from-view-id>/ConsultarCategoriasMaisCadastradas.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CONSULTA_CAT</from-outcome>
+            <to-view-id>/ConsultarCategoriasMaisCadastradas.xhtml</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/principal.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>  
+    
+    <navigation-rule>
+    <navigation-case>
+            <from-outcome>CONSULTA_CAT</from-outcome>
+            <to-view-id>/ConsultarCategoriasMaisCadastradas.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>   
+    
+    
+    <navigation-rule>
+    <from-view-id>/cadastrarOcorrencia.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    
+    
+    </navigation-rule>
+    
+        <navigation-rule>
+    <from-view-id>/cadastrarUsuario.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_USUARIO</from-outcome>
+            <to-view-id>/cadastrarUsuario.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+            <from-outcome>LIMPA_USUARIO</from-outcome>
+            <to-view-id>/cadastrarUsuario.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>/cadastrarAdm.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_ADM</from-outcome>
+            <to-view-id>/cadastrarAdm.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+            <from-outcome>LIMPA_ADM</from-outcome>
+            <to-view-id>/cadastrarAdm.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+    
+    
+    
+        <navigation-rule>
+    <from-view-id>/cadastrarOc_2.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    </navigation-rule>
+    
+            <navigation-rule>
+    <from-view-id>/cadastrarOc_3.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>
+    
+            <navigation-rule>
+    <from-view-id>/cadastrarOc_4.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+             <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    </navigation-rule>    
+
+   
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_5.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>      
+        
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_6.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>      
+
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_7.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>      
+    
+    
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_8.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>      
+ 
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_9.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    </navigation-rule>      
+                                                                
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_10.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    </navigation-rule>      
+
+    <navigation-rule>
+    <from-view-id>/cadastrarOc_11.xhtml</from-view-id>
+    <navigation-case>
+            <from-outcome>CADASTRAR_OCORRENCIA</from-outcome>
+            <to-view-id>/cadastrarOcorrencia.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_2</from-outcome>
+            <to-view-id>/cadastrarOc_2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_3</from-outcome>
+            <to-view-id>/cadastrarOc_3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+         <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_4</from-outcome>
+            <to-view-id>/cadastrarOc_4.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_5</from-outcome>
+            <to-view-id>/cadastrarOc_5.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_6</from-outcome>
+            <to-view-id>/cadastrarOc_6.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_7</from-outcome>
+            <to-view-id>/cadastrarOc_7.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>         
+                
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_8</from-outcome>
+            <to-view-id>/cadastrarOc_8.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+      <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_9</from-outcome>
+            <to-view-id>/cadastrarOc_9.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                     
+                                                      
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_10</from-outcome>
+            <to-view-id>/cadastrarOc_10.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_11</from-outcome>
+            <to-view-id>/cadastrarOc_11.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                          
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_12</from-outcome>
+            <to-view-id>/cadastrarOc_12.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_13</from-outcome>
+            <to-view-id>/cadastrarOc_13.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+     <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_14</from-outcome>
+            <to-view-id>/cadastrarOc_14.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>                                                                                                                                                                                                                                                                                                                       
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>CADASTRO_15</from-outcome>
+            <to-view-id>/cadastrarOc_15.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>PRINCIPAL_USR</from-outcome>
+            <to-view-id>/principal_USER.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    </navigation-rule>      
+                                                                                                                                                                                                                                                                                                                                                                    
+                    
+</faces-config>

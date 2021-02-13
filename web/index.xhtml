@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Autenticação de Usuário</title>
+        
+        <!-- border configuration -->
+        <style>
+            body { padding-top: 40px; }
+        </style>
+        
+        
+
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Optional Bootstrap Theme -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    </h:head>
+    
+    <h:body>
+        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h:form>
+                        <h:commandLink  styleClass="nav-link text-white" action="#{LogarSistema.CadastrarUsuario()}" value="Cadastrar"/>
+                    </h:form>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container-fluid p-3 my-3 bg-dark text-white text-center">
+           <h1>Sistema de Registro de B.O</h1>
+           <p>Efetue login abaixo ou clique em cadastrar</p>
+       </div>
+
+
+
+       <div class="container text-center">
+           <div class="row">
+               <div class="col-sm-4">
+                   <h:form>
+                   <div class="form-group">
+                       <label>Name:</label>
+                       <h:inputText class="form-control" id="txtLogin" size="10" maxlength="6"
+                                        value="#{LogarSistema.login}"
+                                        required="true" requiredMessage="O Login não foi informado!"
+                                        validatorMessage="Tamanho máximo do campo Login excedido!"
+                                        title="Login">
+                           <f:validateLength maximum="6"/>
+                       </h:inputText>
+                   </div>
+                   <div class="form-group">
+                       <label>Password:</label>
+                       <h:inputSecret class="form-control" id="txtSenha" size="10" maxlength="6"
+                                          value="#{LogarSistema.senha}"
+                                          required="true" requiredMessage="A senha não foi informada!"
+                                          validatorMessage="Tamanho máximo do campo Senha excedido!"
+                                          title="Senha">
+                               <f:validateLength maximum="6"/>
+                       </h:inputSecret>
+                   </div>
+                       <div class="row-centered pull-right ">
+                           <h:commandButton id="btnEnviar" value="Entrar" styleClass="btn btn-dark text-white mr-3"
+                                                action="#{LogarSistema.efetuaLogin_action}" />
+                           <h:commandButton id="btnLimpar" value="Limpar" immediate="true" styleClass="btn btn-dark text-white m"
+                                                action="#{LogarSistema.limpaTelaCadastro_action}" />
+                       </div>
+
+                   </h:form>
+               </div>
+
+               <div class="col-sm-8">
+                   <div id="accordion">
+
+                   <div class="card">
+                       <div class="card-header bg-dark" id="headingOne">
+                           <h5 class="mb-0">
+                             <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                               Descrição do Sistema
+                             </button>
+                           </h5>
+                       </div>
+
+                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                         <div class="card-body">
+                             Este sistema tem como objetivo permitir ao usuário registrar um boletim de ocorrência no sistema, o conjunto das ocorrências permite a geração de um relatório que classifica as zonas da cidade em 3 conjuntos, verde, amarelo e vermelho. O conjunto verde é considerado o mais seguro, seguido pelo amarelo que passa a ser classificado como zona de risco moderado e a zona vermelha é classificada como de alto risco.
+                         </div>
+                       </div>
+                   </div>
+                   <div class="card">
+                     <div class="card-header bg-dark" id="headingTwo">
+                       <h5 class="mb-0">
+                         <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                           Desenvolvedores
+                         </button>
+                       </h5>
+                     </div>
+                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                       <div class="card-body text-center">
+                           Rafael Tsuyoshi Yamashita<br/>Ana Rosa Klinke<br/>Gabriel Dornelas Paranatinga
+                       </div>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+           </div>
+       </div>
+
+
+
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </h:body>
+    
+    </html>
+
